@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+# Clarion 2.1.0.2447
+Project("{12B76EC0-1D7B-4FA7-A7D0-C524288B48A1}") = "AddCopyright", "AddCopyright.cwproj", "{1A40E858-8C1B-4BD8-A044-D15BF27BB5A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{{2150E333-8FDC-42A3-9474-1A3956D46DE8}}"
+	ProjectSection(SolutionItems) = postProject
+		AddCopyright.app = AddCopyright.app
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A40E858-8C1B-4BD8-A044-D15BF27BB5A5}.Debug|Win32.Build.0 = Debug|Win32
+		{1A40E858-8C1B-4BD8-A044-D15BF27BB5A5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A40E858-8C1B-4BD8-A044-D15BF27BB5A5}.Release|Win32.Build.0 = Release|Win32
+		{1A40E858-8C1B-4BD8-A044-D15BF27BB5A5}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+EndGlobal

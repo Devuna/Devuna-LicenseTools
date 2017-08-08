@@ -1,0 +1,20 @@
+!region Notices
+! ================================================================================ 
+! Notice : Copyright (C) %CopyrightDate, %CopyrightOwner
+!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
+! 
+!    This file is part of %Repository (https://github.com/Devuna/%Repository) 
+! 
+!    %Repository is free software: you can redistribute it and/or modify 
+!    it under the terms of the MIT License as published by
+!    the Open Source Initiative. 
+! 
+!    %Repository is distributed in the hope that it will be useful, 
+!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
+!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+!    MIT License for more details. 
+! 
+!    You should have received a copy of the GNU General Public License 
+!    along with %Repository.  If not, see <https://opensource.org/licenses/MIT>.
+! ================================================================================ 
+!endregion Notices

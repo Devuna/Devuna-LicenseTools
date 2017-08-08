@@ -1,0 +1,2346 @@
+[APPLICATION]
+VERSION 34
+TODO ABC ToDo
+PROCEDURE Main
+[COMMON]
+FROM ABC
+MODIFIED '2017/06/16' '18:13:30'
+[PROMPTS]
+%ClassItem UNIQUE DEFAULT  ('ErrorManager', 'ErrorStatusManager', 'FileManager:', |
+  'FuzzyMatcher', 'INIManager', 'RelationManager:', 'Translator')
+%DefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 5
+WHEN  ('ErrorManager') ('ErrorClass')
+WHEN  ('ErrorStatusManager') ('ErrorStatusClass')
+WHEN  ('FuzzyMatcher') ('FuzzyClass')
+WHEN  ('INIManager') ('INIClass')
+WHEN  ('Translator') ('TranslatorClass')
+
+%ActualDefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 5
+WHEN  ('ErrorManager') ('')
+WHEN  ('ErrorStatusManager') ('')
+WHEN  ('FuzzyMatcher') ('')
+WHEN  ('INIManager') ('')
+WHEN  ('Translator') ('')
+
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 0
+
+%ProgramAuthor DEFAULT  ('')
+%Repository DEFAULT  ('Devuna-Repository')
+%ProgramIcon DEFAULT  ('')
+%MessageDescription LONG  (1)
+%GlobalExternal LONG  (0)
+%ExternalSource DEFAULT  ('Dynamic Link Library (DLL)')
+%GenerateEmbedComments LONG  (0)
+%INIType DEFAULT  ('NVD_INI')
+%INIFile DEFAULT  ('Program Name.INI')
+%ININame DEFAULT  ('')
+%INIProgramIniLocation DEFAULT  ('APPDIR')
+%INICSIDLDirectory DEFAULT  ('SV:CSIDL_PERSONAL')
+%CSIDLCompanyDir DEFAULT  ('')
+%CSIDLProductDir DEFAULT  ('')
+%CSIDLCreate LONG  (0)
+%INIInAppDirectory LONG  (1)
+%REGRoot DEFAULT  ('REG_CLASSES_ROOT')
+%DisableINISaveWindow LONG  (1)
+%PreserveVars MULTI LONG  ()
+%PreserveVar DEPEND %PreserveVars DEFAULT TIMES 0
+
+%EnableRunTimeTranslator LONG  (0)
+%FuzzyMatchingEnabled LONG  (1)
+%IgnoreCase LONG  (1)
+%WordOnly LONG  (0)
+%ButtonMarginsCompatibility LONG  (0)
+%UseDefaultXPManifest LONG  (0)
+%GenerateXPManifest LONG  (1)
+%LinkGenerateXPManifest LONG  (1)
+%AddVistaXPManifest LONG  (0)
+%VistaManifestExecutionLevel DEFAULT  ('asInvoker')
+%VistaManifestUIAccess LONG  (0)
+%NoThemedControlsDependency LONG  (0)
+%VistaManifestdpiAware LONG  (1)
+%VistaManifestDependentAssembly MULTI LONG  ()
+%VistaManifestDependentAssemblyName DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyVersion DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyType DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyPublicKeyToken DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyLanguage DEPEND %VistaManifestDependentAssembly DEFAULT TIMES 0
+
+%VistaManifestDependentAssemblyProcessorArchitecture DEPEND %VistaManifestDependentAssembly LONG TIMES 0
+
+%W7ManifestVista LONG  (1)
+%W7ManifestW7 LONG  (1)
+%W7ManifestW8 LONG  (1)
+%W7ManifestW81 LONG  (1)
+%W7ManifestW10 LONG  (1)
+%ForceMakeTransparentXPManifest LONG  (0)
+%ForceMakeColorXPManifest LONG  (0)
+%ForceSHEETNoTheme LONG  (0)
+%ExtUIXPMenuEnableGlobal LONG  (0)
+%ExtUIXPMenuColorTypeGlobal DEFAULT  ('OFF')
+%ExtUIXPMenuDisableImageBar LONG  (1)
+%ExtUIXPMenuEnableRuntime LONG  (0)
+%ExtUIXPMenuRuntimeVar DEFAULT  ('')
+%ExtUIXPMenuColorLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorRightGlobal LONG  (12560039)
+%ExtUIXPMenuColorSelectionBarLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorSelectionBarRightGlobal LONG  (15920364)
+%ExtUIXPMenuSelVertical LONG  (1)
+%ExtUIXPMenuColorSelectionBorderGlobal LONG  (15920364)
+%ExtUIXPMenuColorHotLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorHotRightGlobal LONG  (15920364)
+%ExtUIXPMenuColorSelectedLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorSelectedRightGlobal LONG  (15920364)
+%ExtUIXPMenuColorNormalBarLeftGlobal LONG  (15920364)
+%ExtUIXPMenuColorNormalBarRightGlobal LONG  (15920364)
+%ExtUIXPMenuColorItemBackgroundGlobal LONG  (-2147483644)
+%ExtUIXPMenuColorNormalText LONG  (0)
+%ExtUIXPMenuColorSelectedText LONG  (0)
+%ExtUIXPMenuColorHotText LONG  (0)
+%ExtUIXPMenuFlat LONG  (1)
+%ExtUIXPMenuShowImageBar LONG  (0)
+%ExtUIXPMenuSeparator3D LONG  (1)
+%ExtUIXPMenuSeparatorFull LONG  (0)
+%ExtUIXPMenuVerticalLine LONG  (1)
+%ExtUIMDITabGlobal DEFAULT  ('DISABLE')
+%ExtUIMDITabStyleGlobal DEFAULT  ('Default')
+%ExtUITabStyleGlobal DEFAULT  ('Default')
+%WindowEnableEnhanceFocus LONG  (0)
+%SelectedText LONG  (1)
+%SelectedRadio LONG  (1)
+%SelectedSpin LONG  (1)
+%SelectedCheck LONG  (1)
+%SelectedDropList LONG  (1)
+%SelectedList LONG  (1)
+%SelectedDisplayChangeColor LONG  (1)
+%SelectedColor LONG  (65535)
+%SelectedStyle LONG  (1)
+%SelectedRequired LONG  (0)
+%SelectedRequiredColor LONG  (65535)
+%SelectedDisplayBox LONG  (1)
+%SelectedDisplayBoxFillColor LONG  (65535)
+%SelectedDisplayBoxBorderColor LONG  (0)
+%SelectedDisplayBoxBorderSize DEFAULT  ('2')
+%SelectedRequiredBox LONG  (0)
+%SelectedRequiredDisplayBoxFillColor LONG  (255)
+%SelectedRequiredDisplayBoxBorderColor LONG  (0)
+%SelectedCaret LONG  (1)
+%SelectedCaretColor LONG  (8421504)
+%SelectedCaretCharacter DEFAULT  ('»')
+%SelectedCaretCharacterSeparation DEFAULT  ('8')
+%ExcludeSelectedDropList LONG  (0)
+%EnableOSK DEFAULT  ('OFF')
+%GlobalUseEnterInsteadTab LONG  (0)
+%GlobalUseEnterInsteadTabExclude MULTI DEFAULT  ()
+%GlobalUseEnterInsteadTabEnable DEFAULT  ('Enable')
+%GlobalUseEnterInsteadTabEnableValue DEFAULT  ('True')
+%GlobalInterLine DEFAULT  ('0')
+%GlobalEnableAutoSizeColumn LONG  (0)
+%GlobalEnableListFormatManager LONG  (0)
+%GlobalUserFieldListFormatManager DEFAULT  ('1')
+%TableOrigin DEFAULT  ('Application')
+%FileEquate DEFAULT  ('LFM_CFile')
+%ConfigFilePRE DEFAULT  ('CFG')
+%ConfigFileOEM LONG  (0)
+%ConfigFileTHREAD LONG  (1)
+%ConfigFileENCRYPT LONG  (0)
+%ConfigFilePASSWORD DEFAULT  ('')
+%FormatNameSize DEFAULT  ('30')
+%FormatBufferSize DEFAULT  ('5120')
+%VariableBufferSize DEFAULT  ('2048')
+%ConfigFilePath DEFAULT  ('')
+%UseConfigFileName DEFAULT  ('Default')
+%ConfigFileNAME DEFAULT  ('Formats.FDB')
+%ColonCounter DEFAULT  ('')
+%WrongSymbol DEFAULT  ('')
+%DictionaryTableOrigin FILE  ()
+%GlobalLFMSortOrderMenuText DEFAULT  ('SortOrder')
+%GlobalEnableRebase LONG  (0)
+%RBDMethod DEFAULT  ('Specify manually')
+%RBDImageBase DEFAULT  ('10000000')
+%DefaultGenerate LONG  (0)
+%DefaultRILogout LONG  (1)
+%LockRecoverTime DEFAULT  ('10')
+%DefaultThreaded DEFAULT  ('Use File Setting')
+%DefaultCreate DEFAULT  ('Use File Setting')
+%DefaultExternal DEFAULT  ('None External')
+%DefaultLocalExternal LONG  (0)
+%DefaultExternalSource DEFAULT  ('')
+%DefaultExternalAPP LONG  (0)
+%DefaultExport LONG  (0)
+%DefaultOpenMode DEFAULT  ('Share')
+%DefaultUserAccess DEFAULT  ('Read/Write')
+%DefaultOtherAccess DEFAULT  ('Deny None')
+%DefaultLazyOpen LONG  (1)
+%GeneratePropDataPath LONG  (0)
+%PropDataPathLocation DEFAULT  ('CSIDLLIKEINI')
+%DataPathCSIDLDirectory DEFAULT  ('SV:CSIDL_PERSONAL')
+%DataPathCSIDLCompanyDir DEFAULT  ('')
+%DataPathCSIDLProductDir DEFAULT  ('')
+%DataPathCSIDLCreate LONG  (0)
+%DataPathOtherDirectory DEFAULT  ('')
+%DataPathOtherDirectoryCreate LONG  (0)
+%OverrideGenerate DEPEND %File LONG TIMES 0
+
+%OverrideRILogout DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%GlobalObject DEPEND %ClassItem DEFAULT TIMES 5
+WHEN  ('ErrorManager') ('YES')
+WHEN  ('ErrorStatusManager') ('YES')
+WHEN  ('FuzzyMatcher') ('YES')
+WHEN  ('INIManager') ('YES')
+WHEN  ('Translator') ('YES')
+
+%ThisObjectName DEPEND %ClassItem DEFAULT TIMES 5
+WHEN  ('ErrorManager') ('GlobalErrors')
+WHEN  ('ErrorStatusManager') ('GlobalErrorsStatus')
+WHEN  ('FuzzyMatcher') ('FuzzyMatcher')
+WHEN  ('INIManager') ('INIMgr')
+WHEN  ('Translator') ('Translator')
+
+%UseDefaultABCBaseClass DEPEND %ClassItem LONG TIMES 5
+WHEN  ('ErrorManager') (1)
+WHEN  ('ErrorStatusManager') (1)
+WHEN  ('FuzzyMatcher') (1)
+WHEN  ('INIManager') (1)
+WHEN  ('Translator') (1)
+
+%UseABCBaseClass DEPEND %ClassItem LONG TIMES 5
+WHEN  ('ErrorManager') (1)
+WHEN  ('ErrorStatusManager') (1)
+WHEN  ('FuzzyMatcher') (1)
+WHEN  ('INIManager') (1)
+WHEN  ('Translator') (1)
+
+%ABCBaseClass DEPEND %ClassItem DEFAULT TIMES 5
+WHEN  ('ErrorManager') ('')
+WHEN  ('ErrorStatusManager') ('')
+WHEN  ('FuzzyMatcher') ('')
+WHEN  ('INIManager') ('')
+WHEN  ('Translator') ('')
+
+%ExtBaseClass DEPEND %ClassItem DEFAULT TIMES 0
+
+%BaseClassIncludeFile DEPEND %ClassItem DEFAULT TIMES 0
+
+%DeriveFromBaseClass DEPEND %ClassItem LONG TIMES 5
+WHEN  ('ErrorManager') (0)
+WHEN  ('ErrorStatusManager') (0)
+WHEN  ('FuzzyMatcher') (0)
+WHEN  ('INIManager') (0)
+WHEN  ('Translator') (0)
+
+%NewMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewMethodName DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewMethodPrototype DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewClassProperty DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataType DEPEND %NewClassPropertyItems DEFAULT TIMES 1
+WHEN  ('FuzzyMatcher')TIMES 0
+
+%NewClassOtherType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataIsRef DEPEND %NewClassPropertyItems LONG TIMES 0
+
+%NewClassDataSize DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim1 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim2 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim3 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim4 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%ClassMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassMethodName DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassMethodPrototype DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassProperty DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataType DEPEND %ClassPropertyItems DEFAULT TIMES 1
+WHEN  ('FuzzyMatcher')TIMES 0
+
+%ClassOtherType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataIsRef DEPEND %ClassPropertyItems LONG TIMES 0
+
+%ClassDataSize DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim1 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim2 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim3 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim4 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%OverrideThreaded DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%OverrideCreate DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%OverrideExternal DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%OverrideLocalExternal DEPEND %File LONG TIMES 0
+
+%OverrideExternalSource DEPEND %File DEFAULT TIMES 0
+
+%OverrideExternalAPP DEPEND %File LONG TIMES 0
+
+%OverrideExport DEPEND %File LONG TIMES 0
+
+%FileDeclarationMode DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use User Options')
+
+%FileDeclarationType DEPEND %File LONG TIMES 1
+WHEN  ('') (0)
+
+%FileDeclarationThread DEPEND %File LONG TIMES 1
+WHEN  ('') (0)
+
+%FileDeclarationBindable DEPEND %File LONG TIMES 1
+WHEN  ('') (1)
+
+%FileDeclarationName DEPEND %File DEFAULT TIMES 0
+
+%FileDeclarationOver DEPEND %File DEFAULT TIMES 0
+
+%OverrideOpenMode DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%OverrideUserAccess DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%OverrideOtherAccess DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%OverrideLazyOpen DEPEND %File DEFAULT TIMES 1
+WHEN  ('') ('Use Default')
+
+%OverrideDoNotAssertOnCloseMisuse DEPEND %File LONG TIMES 1
+WHEN  ('') (0)
+
+%StandardExternalModule DEPEND %Module LONG TIMES 3
+WHEN  ('') (1)
+WHEN  ('LicenseTXA.clw') (1)
+WHEN  ('LicenseTXA001.clw') (1)
+
+%NoGenerateGlobals LONG  (0)
+%WindowManagerType DEFAULT  ('WindowManager')
+%ResetOnGainFocus LONG  (0)
+%AutoToolbar LONG  (1)
+%AutoRefresh LONG  (1)
+%ImageClass DEFAULT  ('ImageManager')
+%ErrorStatusManagerType DEFAULT  ('ErrorStatusClass')
+%ErrorManagerType DEFAULT  ('ErrorClass')
+%DefaultErrorCategory DEFAULT  ('ABC')
+%AllowSelectCopy LONG  (0)
+%StoreErrorHistory LONG  (0)
+%LimitStoredHistory LONG  (0)
+%ErrorHistoryThreshold DEFAULT  ('300')
+%HistoryViewTrigger DEFAULT  ('Level:Fatal')
+%PopupClass DEFAULT  ('PopupClass')
+%SelectFileClass DEFAULT  ('SelectFileClass')
+%ResizerType DEFAULT  ('WindowResizeClass')
+%ResizerDeFaultFindParents LONG  (1)
+%ResizerDefaultOptimizeMoves LONG  (1)
+%ResizerDefaultOptimizeRedraws LONG  (1)
+%INIClass DEFAULT  ('INIClass')
+%RunTimeTranslatorType DEFAULT  ('TranslatorClass')
+%ExtractionFilename DEFAULT  ('')
+%TranslationGroups MULTI LONG  ()
+%TranslationFile DEPEND %TranslationGroups DEFAULT TIMES 0
+
+%TranslationGroup DEPEND %TranslationGroups DEFAULT TIMES 0
+
+%CalendarManagerType DEFAULT  ('CalendarClass')
+%GlobalChangeColor LONG  (0)
+%GlobalColorSunday LONG  (255)
+%GlobalColorSaturday LONG  (255)
+%GlobalColorHoliday LONG  (32768)
+%GlobalColorOther LONG  (0)
+%GlobalSelectOnClose DEFAULT  ('Select')
+%GlobalUseABCClasess LONG  (1)
+%FileManagerType DEFAULT  ('FileManager')
+%ViewManagerType DEFAULT  ('ViewManager')
+%RelationManagerType DEFAULT  ('RelationManager')
+%BrowserType DEFAULT  ('BrowseClass')
+%ActiveInvisible LONG  (0)
+%AllowUnfilled LONG  (0)
+%RetainRow LONG  (1)
+%FileDropManagerType DEFAULT  ('FileDropClass')
+%FileDropComboManagerType DEFAULT  ('FileDropComboClass')
+%FormVCRManagerType DEFAULT  ('FormVCRClass')
+%BrowseEIPManagerType DEFAULT  ('BrowseEIPManager')
+%EditInPlaceInterface DEFAULT  ('Detailed')
+%EditInPlaceType DEFAULT  ('EditEntryClass')
+%EditInPlaceEntryType DEFAULT  ('EditEntryClass')
+%EditInPlaceTextType DEFAULT  ('EditTextClass')
+%EditInPlaceCheckType DEFAULT  ('EditCheckClass')
+%EditInPlaceSpinType DEFAULT  ('EditSpinClass')
+%EditInPlaceDropListType DEFAULT  ('EditDropListClass')
+%EditInPlaceDropComboType DEFAULT  ('EditDropComboClass')
+%EditInPlaceColorType DEFAULT  ('EditColorClass')
+%EditInPlaceFileType DEFAULT  ('EditFileClass')
+%EditInPlaceFontType DEFAULT  ('EditFontClass')
+%EditInPlaceMultiSelectType DEFAULT  ('EditMultiSelectClass')
+%EditInPlaceCalendarType DEFAULT  ('EditCalendarClass')
+%EditInPlaceLookupType DEFAULT  ('EditLookupClass')
+%EditInPlaceOtherType DEFAULT  ('EditEntryClass')
+%QBEFormType DEFAULT  ('QueryFormClass')
+%QBEFormVisualType DEFAULT  ('QueryFormVisual')
+%QBEListType DEFAULT  ('QueryListClass')
+%QBEListVisualType DEFAULT  ('QueryListVisual')
+%StepManagerType DEFAULT  ('StepClass')
+%StepManagerLongType DEFAULT  ('StepLongClass')
+%StepManagerRealType DEFAULT  ('StepRealClass')
+%StepManagerStringType DEFAULT  ('StepStringClass')
+%StepManagerCustomType DEFAULT  ('StepCustomClass')
+%StepLocatorType DEFAULT  ('StepLocatorClass')
+%EntryLocatorType DEFAULT  ('EntryLocatorClass')
+%IncrementalLocatorType DEFAULT  ('IncrementalLocatorClass')
+%FilteredLocatorType DEFAULT  ('FilterLocatorClass')
+%FuzzyMatcherClass DEFAULT  ('FuzzyClass')
+%GridClass DEFAULT  ('GridClass')
+%SidebarClass DEFAULT  ('SidebarClass')
+%ProcessType DEFAULT  ('ProcessClass')
+%PrintPreviewType DEFAULT  ('PrintPreviewClass')
+%ReportManagerType DEFAULT  ('ReportManager')
+%ReportTargetSelectorManagerType DEFAULT  ('ReportTargetSelectorClass')
+%BreakManagerType DEFAULT  ('BreakManagerClass')
+%AsciiViewerClass DEFAULT  ('AsciiViewerClass')
+%AsciiSearchClass DEFAULT  ('AsciiSearchClass')
+%AsciiPrintClass DEFAULT  ('AsciiPrintClass')
+%AsciiFileManagerType DEFAULT  ('AsciiFileClass')
+%ToolbarClass DEFAULT  ('ToolbarClass')
+%ToolbarListBoxType DEFAULT  ('ToolbarListboxClass')
+%ToolbarRelTreeType DEFAULT  ('ToolbarReltreeClass')
+%ToolbarUpdateClassType DEFAULT  ('ToolbarUpdateClass')
+%ToolbarFormVCRType DEFAULT  ('ToolbarFormVCRClass')
+%OverrideAbcSettings LONG  (0)
+%AbcSourceLocation DEFAULT  ('LINK')
+%AbcLibraryName DEFAULT  ('')
+%AppTemplateFamily DEFAULT  ('ABC')
+%CWTemplateVersion DEFAULT  ('v10.0')
+%ABCVersion DEFAULT  ('10000')
+[PERSIST]
+%SaveCreateLocalMap DEFAULT  ('1')
+%GenerationCompleted DEPEND %Module DEFAULT TIMES 2
+WHEN  ('LicenseTXA.clw') ('1')
+WHEN  ('LicenseTXA001.clw') ('1')
+
+%LastTarget32 DEFAULT  ('1')
+%LastProgramExtension DEFAULT  ('EXE')
+%LastApplicationDebug DEFAULT  ('')
+%LastApplicationLocalLibrary DEFAULT  ('')
+[PROJECT]
+#system win32 exe
+#model clarion dll
+#pragma debug(vid=>off)
+#pragma define(_ABCDllMode_=>0) -- GENERATED
+#pragma define(_ABCLinkMode_=>1) -- GENERATED
+#compile "LicenseTXA.clw" -- GENERATED
+#compile "LicenseTXA001.clw" -- GENERATED
+#compile "LicenseTXA_BC0.CLW" -- GENERATED
+#compile "LICENSETXA_BC.CLW" -- GENERATED
+#pragma link("LicenseTXA.EXE.manifest") -- GENERATED
+#link "LicenseTXA.EXE"
+[PROGRAM]
+[COMMON]
+FROM ABC ABC
+MODIFIED '2017/08/08' ' 8:03:30'
+[EMBED]
+EMBED %BeforeGlobalIncludes
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 50
+PROPERTY:END
+!region Notices
+! ================================================================================ 
+! Notice : Copyright (C) 2017, Devuna
+!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
+! 
+!    This file is part of Devuna-LicenseTools (https://github.com/Devuna/Devuna-LicenseTools) 
+! 
+!    Devuna-LicenseTools is free software: you can redistribute it and/or modify 
+!    it under the terms of the MIT License as published by
+!    the Open Source Initiative. 
+! 
+!    Devuna-LicenseTools is distributed in the hope that it will be useful, 
+!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
+!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+!    MIT License for more details. 
+! 
+!    You should have received a copy of the GNU General Public License 
+!    along with Devuna-LicenseTools.  If not, see <https://opensource.org/licenses/MIT>.
+! ================================================================================ 
+!endregion Notices
+[END]
+[END]
+[END]
+[MODULE]
+[COMMON]
+FROM ABC GENERATED
+MODIFIED '2017/08/08' ' 8:03:46'
+[EMBED]
+EMBED %StartOfModule
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 3500
+PROPERTY:END
+!region Notices
+! ================================================================================ 
+! Notice : Copyright (C) 2017, Devuna
+!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
+! 
+!    This file is part of Devuna-LicenseTools (https://github.com/Devuna/Devuna-LicenseTools) 
+! 
+!    Devuna-LicenseTools is free software: you can redistribute it and/or modify 
+!    it under the terms of the MIT License as published by
+!    the Open Source Initiative. 
+! 
+!    Devuna-LicenseTools is distributed in the hope that it will be useful, 
+!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
+!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+!    MIT License for more details. 
+! 
+!    You should have received a copy of the GNU General Public License 
+!    along with Devuna-LicenseTools.  If not, see <https://opensource.org/licenses/MIT>.
+! ================================================================================ 
+!endregion Notices
+[END]
+[END]
+[PROCEDURE]
+NAME Main
+[COMMON]
+FROM ABC Window
+MODIFIED '2017/08/08' ' 8:04:40'
+[DATA]
+[SCREENCONTROLS]
+! PROMPT('File Queue:'),USE(?FileQueue:Prompt)
+! ENTRY(@s20),USE(FileQueue)
+[REPORTCONTROLS]
+! STRING(@s20),USE(FileQueue)
+FileQueue                QUEUE(FILE:queue),PRE(TXAQ)
+!!> GUID('3faf3363-ab4f-4b67-9610-b7b1ed4957bf'),PROMPT('File Queue:'),HEADER('File Queue'),PICTURE(@s20),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Selected'),USE(?TXAQ:Selected:Prompt)
+! ENTRY(@n3),USE(TXAQ:Selected)
+[REPORTCONTROLS]
+! STRING(@n3),USE(TXAQ:Selected)
+Selected                   BYTE
+!!> GUID('1b9dc6d7-7899-4431-92a1-3fd0894879aa'),PROMPT('Selected'),HEADER('Selected'),PICTURE(@n3),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Icon:'),USE(?TXAQ:Icon:Prompt)
+! ENTRY(@n-14),USE(TXAQ:Icon),RIGHT(1)
+[REPORTCONTROLS]
+! STRING(@n-14),USE(TXAQ:Icon),RIGHT(1)
+Icon                       LONG
+!!> GUID('ac2ff0bf-f55a-49be-8ce2-f6888ce769bc'),PROMPT('Icon:'),HEADER('Icon'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+                         END
+!!> GUID('f03bb4e4-4a2f-4575-b0db-ea87041bc13a')
+[SCREENCONTROLS]
+! PROMPT('Text Filename:'),USE(?TextFilename:Prompt)
+! ENTRY(@s255),USE(TextFilename),MSG('The file containing the text to be processed'),TIP('The file containing the text to be processed')
+[REPORTCONTROLS]
+! STRING(@s255),USE(TextFilename)
+TextFilename             CSTRING(257),STATIC !The file containing the text to be processed
+!!> GUID('910300e2-0b7b-418d-ab98-d977d8a44816'),PROMPT('Text Filename:'),HEADER('Text Filename'),MESSAGE('The file containing the text to be processed'),TOOLTIP('The file containing the text to be processed'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Text Filename:'),USE(?TextOutFilename:Prompt)
+! ENTRY(@s255),USE(TextOutFilename),MSG('The file containing the text to be processed'),TIP('The file containing the text to be processed')
+[REPORTCONTROLS]
+! STRING(@s255),USE(TextOutFilename)
+TextOutFilename          CSTRING(257),STATIC !The file containing the text to be processed
+!!> GUID('85842f55-adb1-4bf5-9064-276a1138b30b'),PROMPT('Text Filename:'),HEADER('Text Filename'),MESSAGE('The file containing the text to be processed'),TOOLTIP('The file containing the text to be processed'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Copyright Filename:'),USE(?CopyrightFilename:Prompt)
+! ENTRY(@s255),USE(CopyrightFilename),MSG('The file containing the tokenized Copyright Text'),TIP('The file containing the tokenized Copyright Text')
+[REPORTCONTROLS]
+! STRING(@s255),USE(CopyrightFilename)
+CopyrightFilename        CSTRING(257) !The file containing the tokenized Copyright Text
+!!> GUID('b9834cb9-0efc-4cbc-be47-4ea681048dd8'),PROMPT('Copyright Filename:'),HEADER('Copyright Filename'),MESSAGE('The file containing the tokenized Copyright Text'),TOOLTIP('The file containing the tokenized Copyright Text'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Copyright Date'),USE(?CopyrightDate:Prompt)
+! ENTRY(@s20),USE(CopyrightDate),MSG('Copyright date for token replacement'),TIP('Copyright date for token replacement')
+[REPORTCONTROLS]
+! STRING(@s20),USE(CopyrightDate)
+CopyrightDate            CSTRING(21) !Copyright date for token replacement
+!!> GUID('aa3ea84a-be0e-40a1-b89c-aaa8022d6acd'),INITIAL('2017<0>{16}'),PROMPT('Copyright Date'),HEADER('Copyright Date'),MESSAGE('Copyright date for token replacement'),TOOLTIP('Copyright date for token replacement'),PICTURE(@s20),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Copyright Owner'),USE(?CopyrightOwner:Prompt)
+! ENTRY(@s20),USE(CopyrightOwner),MSG('Name of Copyright Owner for token replacement'),TIP('Name of Copyright Owner for token replacement')
+[REPORTCONTROLS]
+! STRING(@s20),USE(CopyrightOwner)
+CopyrightOwner           CSTRING(21) !Name of Copyright Owner for token replacement
+!!> GUID('71961d99-2e7a-42b9-af8c-dda82d938937'),INITIAL('Devuna<0>{14}'),PROMPT('Copyright Owner'),HEADER('Copyright Owner'),MESSAGE('Name of Copyright Owner for token replacement'),TOOLTIP('Name of Copyright Owner for token replacement'),PICTURE(@s20),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Repository'),USE(?Repository:Prompt)
+! ENTRY(@s40),USE(Repository),MSG('Repository name for token replacement'),TIP('Repository name for token replacement')
+[REPORTCONTROLS]
+! STRING(@s40),USE(Repository)
+Repository               CSTRING(41) !Repository name for token replacement
+!!> GUID('0e995832-90f4-4bc7-83ce-3452352f49f1'),PROMPT('Repository'),HEADER('Repository'),MESSAGE('Repository name for token replacement'),TOOLTIP('Repository name for token replacement'),PICTURE(@s40),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('TXA Folder'),USE(?Source_Folder:Prompt)
+! ENTRY(@s255),USE(Source_Folder),MSG('Folder containing TXA files to process'),TIP('Folder containing TXA files to process')
+[REPORTCONTROLS]
+! STRING(@s255),USE(Source_Folder)
+Source_Folder            CSTRING(261) !Folder containing TXA files to process
+!!> GUID('b1957132-71d4-42ae-a388-1639cd971c75'),PROMPT('TXA Folder'),HEADER('Source Folder'),MESSAGE('Folder containing TXA files to process'),TOOLTIP('Folder containing TXA files to process'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Target Folder'),USE(?Target_Folder:Prompt)
+! ENTRY(@s255),USE(Target_Folder),MSG('Folder to recieve processed TXA files'),TIP('Folder to recieve processed TXA files')
+[REPORTCONTROLS]
+! STRING(@s255),USE(Target_Folder)
+Target_Folder            CSTRING(261) !Folder to recieve processed TXA files
+!!> GUID('bf17935d-544c-4540-a369-a2c94a098eab'),PROMPT('Target Folder'),HEADER('Source Folder'),MESSAGE('Folder to recieve processed TXA files'),TOOLTIP('Folder to recieve processed TXA files'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Application Queue:'),USE(?ApplicationQueue:Prompt)
+! ENTRY(@s20),USE(ApplicationQueue),MSG('Queue to hold TXA file'),TIP('Queue to hold TXA file')
+[REPORTCONTROLS]
+! STRING(@s20),USE(ApplicationQueue)
+ApplicationQueue         QUEUE,PRE(APPQ) !Queue to hold TXA file
+!!> GUID('82a7d1a5-d68b-4cfc-9be1-fad18d477563'),PROMPT('Application Queue:'),HEADER('Application Queue'),MESSAGE('Queue to hold TXA file'),TOOLTIP('Queue to hold TXA file'),PICTURE(@s20),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Text Line:'),USE(?APPQ:TextLine:Prompt)
+! ENTRY(@s255),USE(APPQ:TextLine)
+[REPORTCONTROLS]
+! STRING(@s255),USE(APPQ:TextLine)
+TextLine                   CSTRING(513)
+!!> GUID('e91c4ada-7502-43d4-9224-ac0d1d756671'),PROMPT('Text Line:'),HEADER('Text Line'),PICTURE(@s255),TYPEMODE(INS)
+                         END
+!!> GUID('ddbaa1af-f642-4154-8d19-88d262b6ba75')
+[SCREENCONTROLS]
+! PROMPT('Copyright Queue:'),USE(?CopyrightQueue:Prompt)
+! ENTRY(@s255),USE(CopyrightQueue),MSG('Queue to hold copyright text'),TIP('Queue to hold copyright text')
+[REPORTCONTROLS]
+! STRING(@s255),USE(CopyrightQueue)
+CopyrightQueue           QUEUE,PRE(CQ) !Queue to hold copyright text
+!!> GUID('e791f296-8224-4500-891c-9be8d70391bc'),PROMPT('Copyright Queue:'),HEADER('Copyright Queue'),MESSAGE('Queue to hold copyright text'),TOOLTIP('Queue to hold copyright text'),PICTURE(@s255),TYPEMODE(INS)
+[SCREENCONTROLS]
+! PROMPT('Copyright Text'),USE(?CQ:CopyrightText:Prompt)
+! ENTRY(@s255),USE(CQ:CopyrightText)
+[REPORTCONTROLS]
+! STRING(@s255),USE(CQ:CopyrightText)
+CopyrightText              CSTRING(256)
+!!> GUID('51f925e5-f1c1-4b03-8a3c-96ff476e711d'),PROMPT('Copyright Text'),HEADER('Copyright Text'),PICTURE(@s255),TYPEMODE(INS)
+                         END
+!!> GUID('206c7eac-9da4-478d-91c1-58324ca4eace')
+[SCREENCONTROLS]
+! PROMPT('I:'),USE(?I:Prompt)
+! ENTRY(@n-14),USE(I),RIGHT(1),MSG('index'),TIP('index')
+[REPORTCONTROLS]
+! STRING(@n-14),USE(I),RIGHT(1)
+I                        LONG !index
+!!> GUID('19fa9870-bb57-4faf-aa7d-e277a336610c'),PROMPT('I:'),HEADER('I'),MESSAGE('index'),TOOLTIP('index'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('J:'),USE(?J:Prompt)
+! ENTRY(@n-14),USE(J),RIGHT(1),MSG('index'),TIP('index')
+[REPORTCONTROLS]
+! STRING(@n-14),USE(J),RIGHT(1)
+J                        LONG !index
+!!> GUID('28197988-6088-4f53-b823-428abc822b1f'),PROMPT('J:'),HEADER('J'),MESSAGE('index'),TOOLTIP('index'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('n:'),USE(?n:Prompt)
+! ENTRY(@n-14),USE(n),RIGHT(1),MSG('index'),TIP('index')
+[REPORTCONTROLS]
+! STRING(@n-14),USE(n),RIGHT(1)
+n                        LONG !index
+!!> GUID('0baecdb3-19f2-4bb9-9853-5abdfe5c5294'),PROMPT('n:'),HEADER('n'),MESSAGE('index'),TOOLTIP('index'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('p:'),USE(?p:Prompt)
+! ENTRY(@n-14),USE(p),RIGHT(1),MSG('index'),TIP('index')
+[REPORTCONTROLS]
+! STRING(@n-14),USE(p),RIGHT(1)
+p                        LONG !index
+!!> GUID('4a191f7f-90dd-43fd-9bb5-849425a4a937'),PROMPT('p:'),HEADER('p'),MESSAGE('index'),TOOLTIP('index'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('Selected Count:'),USE(?SelectedCount:Prompt)
+! ENTRY(@n-14),USE(SelectedCount),RIGHT(1)
+[REPORTCONTROLS]
+! STRING(@n-14),USE(SelectedCount),RIGHT(1)
+SelectedCount            LONG
+!!> GUID('8aa3cfef-1f61-4c75-9006-e57d23931481'),PROMPT('Selected Count:'),HEADER('Selected Count'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('Current Line:'),USE(?CurrentLine:Prompt)
+! ENTRY(@n-14),USE(CurrentLine),RIGHT(1)
+[REPORTCONTROLS]
+! STRING(@n-14),USE(CurrentLine),RIGHT(1)
+CurrentLine              LONG
+!!> GUID('64c948d5-e607-4906-b1e3-cb2aba1b9e2f'),PROMPT('Current Line:'),HEADER('Current Line'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('Line Count:'),USE(?LineCount:Prompt)
+! ENTRY(@n-14),USE(LineCount),RIGHT(1)
+[REPORTCONTROLS]
+! STRING(@n-14),USE(LineCount),RIGHT(1)
+LineCount                LONG
+!!> GUID('6148e63b-7deb-4359-9169-53496a3f80e0'),PROMPT('Line Count:'),HEADER('Line Count'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('First Line:'),USE(?FirstLine:Prompt)
+! ENTRY(@n-14),USE(FirstLine),RIGHT(1),MSG('line to start writing from'),TIP('line to start writing from')
+[REPORTCONTROLS]
+! STRING(@n-14),USE(FirstLine),RIGHT(1)
+FirstLine                LONG !line to start writing from
+!!> GUID('dc0f2d18-9097-439c-ace2-fa53a2e6b836'),PROMPT('First Line:'),HEADER('First Line'),MESSAGE('line to start writing from'),TOOLTIP('line to start writing from'),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[SCREENCONTROLS]
+! PROMPT('Last Line:'),USE(?LastLine:Prompt)
+! ENTRY(@n-14),USE(LastLine),RIGHT(1),MSG('last line to write '),TIP('last line to write ')
+[REPORTCONTROLS]
+! STRING(@n-14),USE(LastLine),RIGHT(1)
+LastLine                 LONG !last line to write
+!!> GUID('64a26c1b-7bf5-4fd4-a89f-ed4a6a52b730'),PROMPT('Last Line:'),HEADER('Last Line'),MESSAGE('last line to write '),TOOLTIP('last line to write '),PICTURE(@n-14),TYPEMODE(INS),JUSTIFY(RIGHT,1)
+[PROMPTS]
+%ClassItem UNIQUE DEFAULT  ('Default', 'WindowToolbar')
+%DefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('WindowManager')
+WHEN  ('WindowToolbar') ('ToolbarClass')
+
+%ActualDefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('')
+WHEN  ('WindowToolbar') ('')
+
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 1
+WHEN  ('Default') ('Init {19}PROCEDURE(),BYTE,PROC,DERIVED', 'Kill {19}PROCEDURE(),BYTE,PROC,DERIVED', |
+  'TakeAccepted {11}PROCEDURE(),BYTE,PROC,DERIVED', 'TakeFieldEvent {9}PROCEDURE(),BYTE,PROC,DERIVED', |
+  'TakeNewSelection       PROCEDURE(),BYTE,PROC,DERIVED', 'Update {17}PROCEDURE(),DERIVED')
+
+%ReturnValue FIELD  ()
+%ProcedureOneInstance LONG  (0)
+%WindowOperationMode DEFAULT  ('Use WINDOW setting')
+%INISaveWindow LONG  (1)
+%ProcedureDisableEnhanceFocus LONG  (0)
+%ProcedureUseEnterInsteadTabOverride LONG  (0)
+%WindowUseEnterInsteadTab LONG  (1)
+%ProcedureUseEnterInsteadTabExcludeListCombo LONG  (0)
+%ProcedureUseEnterInsteadTabEnableNextTabStop LONG  (0)
+%ProcedureUseEnterInsteadTabExcludeG LONG  (1)
+%WindowUseEnterInsteadTabExclude MULTI DEFAULT  ()
+%GlobalObject DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('NO')
+WHEN  ('WindowToolbar') ('NO')
+
+%ThisObjectName DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('ThisWindow')
+WHEN  ('WindowToolbar') ('Toolbar')
+
+%UseDefaultABCBaseClass DEPEND %ClassItem LONG TIMES 2
+WHEN  ('Default') (1)
+WHEN  ('WindowToolbar') (1)
+
+%UseABCBaseClass DEPEND %ClassItem LONG TIMES 2
+WHEN  ('Default') (1)
+WHEN  ('WindowToolbar') (1)
+
+%ABCBaseClass DEPEND %ClassItem DEFAULT TIMES 2
+WHEN  ('Default') ('')
+WHEN  ('WindowToolbar') ('')
+
+%ExtBaseClass DEPEND %ClassItem DEFAULT TIMES 0
+
+%BaseClassIncludeFile DEPEND %ClassItem DEFAULT TIMES 0
+
+%DeriveFromBaseClass DEPEND %ClassItem LONG TIMES 2
+WHEN  ('Default') (0)
+WHEN  ('WindowToolbar') (0)
+
+%NewMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewMethodName DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewMethodPrototype DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewClassProperty DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataType DEPEND %NewClassPropertyItems DEFAULT TIMES 1
+WHEN  ('WindowToolbar')TIMES 0
+
+%NewClassOtherType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataIsRef DEPEND %NewClassPropertyItems LONG TIMES 0
+
+%NewClassDataSize DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim1 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim2 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim3 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim4 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%ClassMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassMethodName DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassMethodPrototype DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassProperty DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataType DEPEND %ClassPropertyItems DEFAULT TIMES 1
+WHEN  ('WindowToolbar')TIMES 0
+
+%ClassOtherType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataIsRef DEPEND %ClassPropertyItems LONG TIMES 0
+
+%ClassDataSize DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim1 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim2 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim3 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim4 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%WindowStyles MULTI LONG  (1)
+%WindowStyleFontName DEPEND %WindowStyles DEFAULT TIMES 1
+WHEN  (1) ('Segoe UI Semilight')
+
+%WindowStyleFontNameVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontNameIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStyleFontSize DEPEND %WindowStyles DEFAULT TIMES 1
+WHEN  (1) ('11')
+
+%WindowStyleFontSizeVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontSizeIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStyleFontStyle DEPEND %WindowStyles DEFAULT TIMES 1
+WHEN  (1) ('350')
+
+%WindowStyleFontStyleVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleFontStyleIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStyleFontColor DEPEND %WindowStyles DEFAULT TIMES 1
+WHEN  (1) ('0')
+
+%WindowStyleFontCharSet DEPEND %WindowStyles DEFAULT TIMES 1
+WHEN  (1) ('1')
+
+%WindowStyleForegroundNormal DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (32768)
+
+%WindowStyleForegroundNormalVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleForegroundNormalIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStyleBackgroundNormal DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (-1)
+
+%WindowStyleBackgroundNormalVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleBackgroundNormalIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStyleForegroundSelected DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (16777215)
+
+%WindowStyleForegroundSelectedVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleForegroundSelectedIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStyleBackgroundSelected DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (32768)
+
+%WindowStyleBackgroundSelectedVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStyleBackgroundSelectedIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStylePicture DEPEND %WindowStyles DEFAULT TIMES 1
+WHEN  (1) ('')
+
+%WindowStylePictureVariable DEPEND %WindowStyles DEFAULT TIMES 0
+
+%WindowStylePictureIsVariable DEPEND %WindowStyles LONG TIMES 1
+WHEN  (1) (0)
+
+%WindowStyleOtherListboxes MULTI DEFAULT  ()
+%ProcedureAutoBindFields MULTI LONG  ()
+%ProcedureAutoBindField DEPEND %ProcedureAutoBindFields DEFAULT TIMES 0
+
+%ProcedureAutoBindFieldTPL DEPEND %ProcedureAutoBindFields DEFAULT TIMES 0
+
+%ProcedureAutoBindProcedures MULTI LONG  ()
+%ProcedureAutoBindProcedure DEPEND %ProcedureAutoBindProcedures DEFAULT TIMES 0
+
+%ProcedureAutoBindProcedureTPL DEPEND %ProcedureAutoBindProcedures DEFAULT TIMES 0
+
+%ProcedureAutoBindFieldsIgnored MULTI LONG  ()
+%ProcedureAutoBindFieldIgnored DEPEND %ProcedureAutoBindFieldsIgnored DEFAULT TIMES 0
+
+%ProcedureAutoBindProceduresIgnored MULTI LONG  ()
+%ProcedureAutoBindProcedureIgnored DEPEND %ProcedureAutoBindProceduresIgnored DEFAULT TIMES 0
+
+%ProcedureAutoBindValidToAddField LONG  (0)
+%ProcedureUserBindFields MULTI LONG  ()
+%ProcedureUserBindField DEPEND %ProcedureUserBindFields FIELD TIMES 0
+
+%ProcedureAutoBindFieldIgnore DEPEND %ProcedureAutoBindFields LONG TIMES 0
+
+%ProcedureUserBindProcedures MULTI LONG  ()
+%ProcedureUserBindProcedure DEPEND %ProcedureUserBindProcedures PROCEDURE TIMES 0
+
+%ProcedureAutoBindProcedureIgnore DEPEND %ProcedureAutoBindProcedures LONG TIMES 0
+
+%ProcedureUserBindExpressions MULTI LONG  ()
+%ProcedureUserBindExpressionName DEPEND %ProcedureUserBindExpressions DEFAULT TIMES 0
+
+%ProcedureUserBindExpression DEPEND %ProcedureUserBindExpressions DEFAULT TIMES 0
+
+%PreserveVarsLoc MULTI LONG  ()
+%PreserveVarLoc DEPEND %PreserveVarsLoc DEFAULT TIMES 0
+
+%ExtUITabIcon DEPEND %Control DEFAULT TIMES 0
+
+%ExtUITabStyleOverrideGlobal DEPEND %Control LONG TIMES 0
+
+%ExtUITabStyle DEPEND %Control DEFAULT TIMES 4
+WHEN  ('') ('Default')
+WHEN  ('?LookupCopyrightFile') ('Default')
+WHEN  ('?LookupSourceFolder') ('Default')
+WHEN  ('?SelectAllButton') ('Default')
+
+%FieldGradientColorType DEPEND %Control DEFAULT TIMES 4
+WHEN  ('') ('Off')
+WHEN  ('?LookupCopyrightFile') ('Off')
+WHEN  ('?LookupSourceFolder') ('Off')
+WHEN  ('?SelectAllButton') ('Off')
+
+%FieldGradientColorTypeVariable DEPEND %Control DEFAULT TIMES 4
+WHEN  ('') ('')
+WHEN  ('?LookupCopyrightFile') ('')
+WHEN  ('?LookupSourceFolder') ('')
+WHEN  ('?SelectAllButton') ('')
+
+%FieldGradientColorTypeIsVariable DEPEND %Control LONG TIMES 4
+WHEN  ('') (0)
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+WHEN  ('?SelectAllButton') (0)
+
+%FieldGradientColorFrom DEPEND %Control LONG TIMES 4
+WHEN  ('') (-1)
+WHEN  ('?LookupCopyrightFile') (-1)
+WHEN  ('?LookupSourceFolder') (-1)
+WHEN  ('?SelectAllButton') (-1)
+
+%FieldGradientColorFromVariable DEPEND %Control DEFAULT TIMES 0
+
+%FieldGradientColorFromIsVariable DEPEND %Control LONG TIMES 4
+WHEN  ('') (0)
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+WHEN  ('?SelectAllButton') (0)
+
+%FieldGradientColorTo DEPEND %Control LONG TIMES 4
+WHEN  ('') (-1)
+WHEN  ('?LookupCopyrightFile') (-1)
+WHEN  ('?LookupSourceFolder') (-1)
+WHEN  ('?SelectAllButton') (-1)
+
+%FieldGradientColorToVariable DEPEND %Control DEFAULT TIMES 0
+
+%FieldGradientColorToIsVariable DEPEND %Control LONG TIMES 4
+WHEN  ('') (0)
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+WHEN  ('?SelectAllButton') (0)
+
+%ButtonAction DEPEND %Control DEFAULT TIMES 8
+WHEN  ('') ('No Special Action')
+WHEN  ('?CloseButton') ('No Special Action')
+WHEN  ('?LookupCopyrightFile') ('No Special Action')
+WHEN  ('?LookupSourceFolder') ('No Special Action')
+WHEN  ('?LookupTargetFolder') ('No Special Action')
+WHEN  ('?OkButton') ('No Special Action')
+WHEN  ('?SelectAllButton') ('No Special Action')
+WHEN  ('?SelectButton') ('No Special Action')
+
+%ButtonRunName DEPEND %Control DEFAULT TIMES 2
+WHEN  ('?LookupCopyrightFile') ('')
+WHEN  ('?LookupSourceFolder') ('')
+
+%ButtonRunParameters DEPEND %Control DEFAULT TIMES 2
+WHEN  ('?LookupCopyrightFile') ('')
+WHEN  ('?LookupSourceFolder') ('')
+
+%ButtonProcedure DEPEND %Control PROCEDURE TIMES 2
+WHEN  ('?LookupCopyrightFile') ()
+WHEN  ('?LookupSourceFolder') ()
+
+%ButtonThread DEPEND %Control LONG TIMES 2
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+
+%ButtonThreadStack DEPEND %Control DEFAULT TIMES 8
+WHEN  ('') ('25000')
+WHEN  ('?CloseButton') ('25000')
+WHEN  ('?LookupCopyrightFile') ('25000')
+WHEN  ('?LookupSourceFolder') ('25000')
+WHEN  ('?LookupTargetFolder') ('25000')
+WHEN  ('?OkButton') ('25000')
+WHEN  ('?SelectAllButton') ('25000')
+WHEN  ('?SelectButton') ('25000')
+
+%ButtonParameters DEPEND %Control DEFAULT TIMES 2
+WHEN  ('?LookupCopyrightFile') ('')
+WHEN  ('?LookupSourceFolder') ('')
+
+%ButtonReturnValueAssignment DEPEND %Control FIELD TIMES 2
+WHEN  ('?LookupCopyrightFile') ()
+WHEN  ('?LookupSourceFolder') ()
+
+%ButtonReturnValueReferenceAssign DEPEND %Control LONG TIMES 2
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+
+%ButtonRequest DEPEND %Control DEFAULT TIMES 8
+WHEN  ('') ('None')
+WHEN  ('?CloseButton') ('None')
+WHEN  ('?LookupCopyrightFile') ('None')
+WHEN  ('?LookupSourceFolder') ('None')
+WHEN  ('?LookupTargetFolder') ('None')
+WHEN  ('?OkButton') ('None')
+WHEN  ('?SelectAllButton') ('None')
+WHEN  ('?SelectButton') ('None')
+
+%ButtonThreadParameters DEPEND %Control DEFAULT TIMES 2
+WHEN  ('?LookupCopyrightFile') ('')
+WHEN  ('?LookupSourceFolder') ('')
+
+%ButtonThreadReturnValueAssignment DEPEND %Control FIELD TIMES 2
+WHEN  ('?LookupCopyrightFile') ()
+WHEN  ('?LookupSourceFolder') ()
+
+%PreLookupKey DEPEND %Control KEY TIMES 0
+
+%PreLookupField DEPEND %Control COMPONENT TIMES 0
+
+%PreLookupProcedure DEPEND %Control PROCEDURE TIMES 0
+
+%PreLookupProcedureParameters DEPEND %Control DEFAULT TIMES 0
+
+%PostLookupKey DEPEND %Control KEY TIMES 0
+
+%PostLookupField DEPEND %Control COMPONENT TIMES 0
+
+%PostLookupProcedure DEPEND %Control PROCEDURE TIMES 0
+
+%PostLookupProcedureParameters DEPEND %Control DEFAULT TIMES 0
+
+%PostLookupDuringValidate DEPEND %Control LONG TIMES 10
+WHEN  ('') (1)
+WHEN  ('?CopyrightDate') (1)
+WHEN  ('?CopyrightFilename') (1)
+WHEN  ('?CopyrightOwner') (1)
+WHEN  ('?LookupCopyrightFile') (1)
+WHEN  ('?LookupSourceFolder') (1)
+WHEN  ('?Repository') (1)
+WHEN  ('?SelectAllButton') (1)
+WHEN  ('?Source_Folder') (1)
+WHEN  ('?Target_Folder') (1)
+
+%LookupAssign DEPEND %Control MULTI LONG TIMES 0
+
+%MoreTarget DEPEND %LookupAssign FIELD TIMES 0
+
+%MoreField DEPEND %LookupAssign DEFAULT TIMES 0
+
+%ForceWindowRefresh DEPEND %Control LONG TIMES 0
+
+%CheckedAssigns DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedAssignVariable DEPEND %CheckedAssigns FIELD TIMES 0
+
+%CheckedAssignValue DEPEND %CheckedAssigns DEFAULT TIMES 0
+
+%CheckedHides DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedControl DEPEND %CheckedHides DEFAULT TIMES 0
+
+%CheckedControlAction DEPEND %CheckedHides DEFAULT TIMES 4
+WHEN  ('')TIMES 0
+WHEN  ('?LookupCopyrightFile')TIMES 0
+WHEN  ('?LookupSourceFolder')TIMES 0
+WHEN  ('?SelectAllButton')TIMES 0
+
+%CheckedEnables DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedControl1 DEPEND %CheckedEnables DEFAULT TIMES 0
+
+%CheckedControl1Action DEPEND %CheckedEnables DEFAULT TIMES 4
+WHEN  ('')TIMES 0
+WHEN  ('?LookupCopyrightFile')TIMES 0
+WHEN  ('?LookupSourceFolder')TIMES 0
+WHEN  ('?SelectAllButton')TIMES 0
+
+%UncheckedAssigns DEPEND %Control MULTI LONG TIMES 0
+
+%UncheckedAssignVariable DEPEND %UncheckedAssigns FIELD TIMES 0
+
+%UncheckedAssignValue DEPEND %UncheckedAssigns DEFAULT TIMES 0
+
+%UnCheckedHides DEPEND %Control MULTI LONG TIMES 0
+
+%UnCheckedControl DEPEND %UnCheckedHides DEFAULT TIMES 0
+
+%UnCheckedControlAction DEPEND %UnCheckedHides DEFAULT TIMES 4
+WHEN  ('')TIMES 0
+WHEN  ('?LookupCopyrightFile')TIMES 0
+WHEN  ('?LookupSourceFolder')TIMES 0
+WHEN  ('?SelectAllButton')TIMES 0
+
+%UnCheckedEnables DEPEND %Control MULTI LONG TIMES 0
+
+%UnCheckedControl1 DEPEND %UnCheckedEnables DEFAULT TIMES 0
+
+%UnCheckedControl1Action DEPEND %UnCheckedEnables DEFAULT TIMES 4
+WHEN  ('')TIMES 0
+WHEN  ('?LookupCopyrightFile')TIMES 0
+WHEN  ('?LookupSourceFolder')TIMES 0
+WHEN  ('?SelectAllButton')TIMES 0
+
+%CheckedDisables DEPEND %Control MULTI LONG TIMES 0
+
+%CheckedDisableControl DEPEND %CheckedDisables DEFAULT TIMES 0
+
+%CheckedDisableControlAction DEPEND %CheckedDisables DEFAULT TIMES 4
+WHEN  ('')TIMES 0
+WHEN  ('?LookupCopyrightFile')TIMES 0
+WHEN  ('?LookupSourceFolder')TIMES 0
+WHEN  ('?SelectAllButton')TIMES 0
+
+%UnCheckedDisables DEPEND %Control MULTI LONG TIMES 0
+
+%UnCheckedDisableControl DEPEND %UnCheckedDisables DEFAULT TIMES 0
+
+%UnCheckedDisableControlAction DEPEND %UnCheckedDisables DEFAULT TIMES 4
+WHEN  ('')TIMES 0
+WHEN  ('?LookupCopyrightFile')TIMES 0
+WHEN  ('?LookupSourceFolder')TIMES 0
+WHEN  ('?SelectAllButton')TIMES 0
+
+%ActiveImageEnable DEPEND %Control LONG TIMES 0
+
+%AIObjectName DEPEND %Control DEFAULT TIMES 4
+WHEN  ('') ('AIBtn0')
+WHEN  ('?LookupCopyrightFile') ('AIBtn3')
+WHEN  ('?LookupSourceFolder') ('AIBtn15')
+WHEN  ('?SelectAllButton') ('AIBtn17')
+
+%AIEnableMimicControl DEPEND %Control LONG TIMES 4
+WHEN  ('') (1)
+WHEN  ('?LookupCopyrightFile') (1)
+WHEN  ('?LookupSourceFolder') (1)
+WHEN  ('?SelectAllButton') (1)
+
+%AIMimicControl DEPEND %Control DEFAULT TIMES 4
+WHEN  ('') ('?OkButton')
+WHEN  ('?LookupCopyrightFile') ('?OkButton')
+WHEN  ('?LookupSourceFolder') ('?OkButton')
+WHEN  ('?SelectAllButton') ('?OkButton')
+
+%AIImgRound DEPEND %Control LONG TIMES 0
+
+%AIOverrideImg DEPEND %Control DEFAULT TIMES 0
+
+%AIOverrideImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIOverrideImgIsVariable DEPEND %Control LONG TIMES 4
+WHEN  ('') (0)
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+WHEN  ('?SelectAllButton') (0)
+
+%AIDisableImg DEPEND %Control DEFAULT TIMES 0
+
+%AIDisableImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIDisableImgIsVariable DEPEND %Control LONG TIMES 4
+WHEN  ('') (0)
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+WHEN  ('?SelectAllButton') (0)
+
+%AIHotImg DEPEND %Control DEFAULT TIMES 0
+
+%AIHotImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIHotImgIsVariable DEPEND %Control LONG TIMES 4
+WHEN  ('') (0)
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+WHEN  ('?SelectAllButton') (0)
+
+%AIPressedImg DEPEND %Control DEFAULT TIMES 0
+
+%AIPressedImgVariable DEPEND %Control DEFAULT TIMES 0
+
+%AIPressedImgIsVariable DEPEND %Control LONG TIMES 4
+WHEN  ('') (0)
+WHEN  ('?LookupCopyrightFile') (0)
+WHEN  ('?LookupSourceFolder') (0)
+WHEN  ('?SelectAllButton') (0)
+
+[EMBED]
+EMBED %ControlEventHandling
+[INSTANCES]
+WHEN '?CloseButton'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+POST(EVENT:CloseWindow)
+[END]
+[END]
+WHEN '?OkButton'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+!Process the Copyright file
+DO ProcessCopyright
+
+!Process selected TXA's
+LOOP n = 1 TO RECORDS(FileQueue)
+   GET(FileQueue,n)
+   IF FileQueue.Selected = TRUE
+      TextFilename = Source_Folder & '\' & CLIP(FileQueue.Name)
+      TextOutFilename = Target_Folder & '\' & CLIP(FileQueue.Name)
+      DO ProcessTXA
+   END
+END
+
+SELECT(?CloseButton)
+[END]
+[END]
+WHEN '?LookupSourceFolder'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 7501
+PROPERTY:END
+SELF.Update()
+Target_Folder = Source_Folder & '\Updated'
+DISPLAY(?Target_Folder)
+!Get directory list of TXA files
+FREE(FileQueue)
+DIRECTORY(FileQueue,Source_Folder & '\*.TXA',ff_:NORMAL)
+SORT(FileQueue,FileQueue.Name)
+LOOP I = 1 TO RECORDS(FileQueue)
+   GET(FileQueue,I)
+   FileQueue.Selected = FALSE
+   FileQueue.Icon = 1
+   PUT(FileQueue)
+END
+GET(FileQueue,1)
+?FileList{PROP:Selected} = 1
+DISPLAY(?FileList)
+SELF.Update()
+[END]
+[END]
+WHEN '?SelectButton'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+GET(FileQueue,?FileList{PROP:Selected})
+FileQueue.Selected = ABS(FileQueue.Selected - 1)
+IF FileQueue.Selected = TRUE
+   SelectedCount += 1
+ELSE
+   SelectedCount -= 1
+END
+FileQueue.Icon = FileQueue.Selected + 1
+PUT(FileQueue)
+
+IF ?FileList{PROP:Selected} = RECORDS(FileQueue)
+   GET(FileQueue,1)
+   ?FileList{PROP:Selected} = 1
+ELSE
+   GET(FileQueue,POINTER(FileQueue) + 1)
+   ?FileList{PROP:Selected} = ?FileList{PROP:Selected} + 1
+END
+
+DISPLAY(?FileList)
+SELF.Update()
+POST(EVENT:NewSelection,?FileList)
+[END]
+[END]
+WHEN '?SelectAllButton'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+SelectedCount = RECORDS(FileQueue)
+LOOP I = 1 TO SelectedCount
+   GET(FileQueue,I)
+   FileQueue.Selected = TRUE
+   FileQueue.Icon = 2
+   PUT(FileQueue)
+END      
+DISPLAY(?FileList)
+SELF.Update()              
+[END]
+[END]
+WHEN '?FileList'
+[INSTANCES]
+WHEN 'NewSelection'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+GET(FileQueue,CHOICE(?FileList))
+IF FileQueue.Selected
+   ?SelectButton{PROP:Text} = 'De&select'
+ELSE
+   ?SelectButton{PROP:Text} = '&Select'
+END
+DISPLAY(?SelectButton)
+[END]
+WHEN 'AlertKey'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 5000
+PROPERTY:END
+CASE KEYCODE()
+  OF MouseLeft2
+     GET(FileQueue,?FileList{PROP:Selected})
+     FileQueue.Selected = ABS(FileQueue.Selected - 1)
+     IF FileQueue.Selected = TRUE
+        SelectedCount += 1
+     ELSE
+        SelectedCount -= 1
+     END
+     FileQueue.Icon = FileQueue.Selected + 1
+     PUT(FileQueue) 
+     DISPLAY(?FileList)
+     SELF.Update()        
+END  
+[END]
+[END]
+WHEN '?LookupCopyrightFile'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8800
+PROPERTY:END
+SELF.Update()
+[END]
+[END]
+WHEN '?CopyrightDate'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 2500
+PROPERTY:END
+  SELF.Update()
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8500
+PROPERTY:END
+SELF.Update()
+[END]
+[END]
+WHEN '?CopyrightOwner'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 2500
+PROPERTY:END
+SELF.Update()
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8500
+PROPERTY:END
+SELF.Update()
+[END]
+[END]
+WHEN '?Repository'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 2500
+PROPERTY:END
+SELF.Update()
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8500
+PROPERTY:END
+SELF.Update()
+[END]
+[END]
+WHEN '?LookupTargetFolder'
+[INSTANCES]
+WHEN 'Accepted'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8800
+PROPERTY:END
+SELF.Update()
+[END]
+[END]
+[END]
+EMBED %WindowManagerMethodCodeSection
+[INSTANCES]
+WHEN 'Init'
+[INSTANCES]
+WHEN '(),BYTE'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 8800
+PROPERTY:END
+?FileList{PROP:IconList,1} = '~checkno-listbox.ico'
+?FileList{PROP:IconList,2} = '~checkyes-listbox.ico'
+
+LookupTXAFolder.DefaultFile = LONGPATH(PATH())
+CopyrightFilename = LookupTXAFolder.DefaultFile & '\' & LookupCopyrightFile.DefaultFile
+
+Source_Folder = LookupTXAFolder.DefaultFile
+FREE(FileQueue)
+DIRECTORY(FileQueue,Source_Folder & '\*.TXA',ff_:NORMAL)
+SORT(FileQueue,FileQueue.Name)
+LOOP I = 1 TO RECORDS(FileQueue)
+   GET(FileQueue,I)
+   FileQueue.Selected = FALSE
+   FileQueue.Icon = 1
+   PUT(FileQueue)
+END
+GET(FileQueue,1)
+
+Target_Folder = LookupTXAFolder.DefaultFile &'\' & 'Updated'
+
+?FileList{PROP:Selected} = 1
+[END]
+[END]
+WHEN 'Update'
+[INSTANCES]
+WHEN '()'
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 6300
+PROPERTY:END
+!MESSAGE( CopyrightFilename & ', ' &  CopyrightDate & ', ' &  CopyrightOwner & ', ' &  Repository & ', ' &  Source_Folder & ', ' &  Target_Folder & ', ' &  SelectedCount)
+
+
+IF  CopyrightFilename <> '' |
+AND CopyrightDate <> ''     |
+AND CopyrightOwner <> ''    |
+AND Repository <> ''        |
+AND Source_Folder <> ''     |
+AND Target_Folder <> ''     |
+AND SelectedCount > 0
+   ENABLE(?OkButton)
+ELSE
+   DISABLE(?OkButton)
+END
+[END]
+[END]
+[END]
+EMBED %ProcedureRoutines
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+ProcessCopyright  ROUTINE
+   TextFilename = CopyrightFilename
+   OPEN(TextFile)
+   SET(TextFile)
+   NEXT(TextFile)
+   LOOP UNTIL ERRORCODE()
+      !Replace CopyrightDate token
+      CopyrightQueue.CopyrightText = ''
+      I = 1
+      J = INSTRING('%CopyrightDate',TextFile.Line,1,I)
+      LOOP WHILE J
+          CopyrightQueue.CopyrightText = CopyrightQueue.CopyrightText & TextFile.Line[I : J-1] & CopyrightDate
+          I = J + 14
+          J = INSTRING('%CopyrightDate',TextFile.Line,1,I)
+      END
+      CopyrightQueue.CopyrightText = CopyrightQueue.CopyrightText & TextFile.Line[I : LEN(CLIP(TextFile.Line))]
+      TextFile.Line = CopyrightQueue.CopyrightText
+
+      !Replace CopyrightOwner token
+      CopyrightQueue.CopyrightText = ''
+      I = 1
+      J = INSTRING('%CopyrightOwner',TextFile.Line,1,I)
+      LOOP WHILE J
+          CopyrightQueue.CopyrightText = CopyrightQueue.CopyrightText & TextFile.Line[I : J-1] & CopyrightOwner
+          I = J + 15
+          J = INSTRING('%CopyrightOwner',TextFile.Line,1,I)
+      END
+      CopyrightQueue.CopyrightText = CopyrightQueue.CopyrightText & TextFile.Line[I : LEN(CLIP(TextFile.Line))]
+      TextFile.Line = CopyrightQueue.CopyrightText
+
+      !Replace Repository token
+      CopyrightQueue.CopyrightText = ''
+      I = 1
+      J = INSTRING('%Repository',TextFile.Line,1,I)
+      LOOP WHILE J
+          CopyrightQueue.CopyrightText = CopyrightQueue.CopyrightText & TextFile.Line[I : J-1] & Repository
+          I = J + 11
+          J = INSTRING('%Repository',TextFile.Line,1,I)
+      END
+      CopyrightQueue.CopyrightText = CopyrightQueue.CopyrightText & TextFile.Line[I : LEN(CLIP(TextFile.Line))]
+
+      ADD(CopyrightQueue)
+      NEXT(TextFile)
+   END
+   CLOSE(TextFile)
+   EXIT
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+Inject_EMBED   ROUTINE
+   TextOutFile.Line = '[EMBED]'
+   ADD(TextOutFile)
+   DO Inject_EmbedPoint
+   TextOutFile.Line = '[END]' !END [EMBED]
+   ADD(TextOutFile)
+
+Inject_EmbedPoint ROUTINE
+   CASE CurrentSection
+     OF ProgramSection
+        TextOutFile.Line = 'EMBED %BeforeGlobalIncludes'
+     OF ModuleSection
+        TextOutFile.Line = 'EMBED %StartOfModule'
+     OF ProcedureSection
+        TextOutFile.Line = 'EMBED %DataSection'
+   END
+   ADD(TextOutFile)
+   DO Inject_DEFINITION
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+Inject_DEFINITION ROUTINE
+   TextOutFile.Line = '[DEFINITION]'
+   ADD(TextOutFile)
+   DO Inject_SOURCE
+   TextOutFile.Line = '[END]' !END [DEFINITION]
+   ADD(TextOutFile)
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+Inject_SOURCE ROUTINE
+   TextOutFile.Line = '[SOURCE]'
+   ADD(TextOutFile)
+   TextOutFile.Line = 'PROPERTY:BEGIN'
+   ADD(TextOutFile)
+   CASE CurrentSection
+     OF ProgramSection
+        TextOutFile.Line = 'PRIORITY 3500'
+     OF ModuleSection
+        TextOutFile.Line = 'PRIORITY 1300'
+     OF ProcedureSection
+        TextOutFile.Line = 'PRIORITY 50'
+   END  
+   ADD(TextOutFile)
+   TextOutFile.Line = 'PROPERTY:END'
+   ADD(TextOutFile)
+   DO InjectCopyright
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+InjectCopyright   ROUTINE
+   LOOP p = 1 TO RECORDS(CopyrightQueue)
+      GET(CopyrightQueue,p)
+      TextOutFile.Line = CopyrightQueue.CopyrightText
+      ADD(TextOutFile)
+   END
+   EXIT
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+LoadApplication   ROUTINE
+   !load TXA into queue
+   FREE(ApplicationQueue)
+   OPEN(TextFile)
+   IF NOT ERRORCODE()
+      SET(TextFile)
+      NEXT(TextFile)
+      LOOP UNTIL ERRORCODE()
+         ApplicationQueue.TextLine = TextFile.Line
+         ADD(ApplicationQueue)
+         NEXT(TextFile)
+      END
+      CLOSE(TextFile)
+   END
+   CurrentLine = 1
+   LineCount = RECORDS(ApplicationQueue)
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+WriteUntilProgramFound  ROUTINE
+   LOOP CurrentLine = CurrentLine TO LineCount
+      GET(ApplicationQueue,CurrentLine)
+      IF ApplicationQueue.TextLine = '[PROGRAM]' OR ApplicationQueue.TextLine = '[MODULE]'
+         BREAK
+      ELSE
+         TextOutFile.Line = ApplicationQueue.TextLine
+         ADD(TextOutFile)
+      END
+   END
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+WriteRange  ROUTINE
+   LOOP CurrentLine = FirstLine TO LastLine
+      GET(ApplicationQueue,CurrentLine)
+      TextOutFile.Line = ApplicationQueue.TextLine
+      ADD(TextOutFile)
+   END
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+ProcessTXA  ROUTINE
+   CREATE(TextOutFile)
+   IF NOT ERRORCODE()
+      OPEN(TextOutFile)
+      IF NOT ERRORCODE()
+         DO LoadApplication
+         IF LineCount > 0
+            DO WriteUntilProgramFound
+            !at this point the CurrentLine should be [PROGRAM] or [MODULE]
+            DO ProcessProgramSection
+            
+            CurrentLine = LastLine + 1
+
+            !TextOutFile.Line = '== END PROGRAM SECTION ' & ALL('=')
+            !ADD(TextOutFile)
+
+            LOOP CurrentLine = CurrentLine TO LineCount
+               GET(ApplicationQueue,CurrentLine)
+               IF ApplicationQueue.TextLine = '[MODULE]'
+                  DO ProcessModuleSection
+                  CurrentLine = LastLine
+                  !TextOutFile.Line = '== END MODULE SECTION ' & ALL('=')
+                  !ADD(TextOutFile)
+               ELSIF ApplicationQueue.TextLine = '[PROCEDURE]'
+                  DO ProcessProcedureSection
+                  CurrentLine = LastLine
+                  !TextOutFile.Line = '== END PROCEDURE SECTION ' & ALL('=')
+                  !ADD(TextOutFile)
+               ELSE
+                  TextOutFile.Line = ApplicationQueue.TextLine
+                  ADD(TextOutFile)
+               END
+            END
+            
+            LOOP CurrentLine = LastLine TO LineCount
+               GET(ApplicationQueue,CurrentLine)
+               TextOutFile.Line = ApplicationQueue.TextLine
+               ADD(TextOutFile)
+            END            
+            
+            CLOSE(TextFile)
+            CLOSE(TextOutFile)
+         ELSE
+            CLOSE(TextOutFile)
+            REMOVE(TextOutFile)
+         END
+      END
+   END
+   EXIT
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+ProcessProgramSection ROUTINE
+   CurrentSection = ProgramSection
+   sSECTION = CurrentLine
+   !Find the COMMON subsection
+   LOOP CurrentLine = CurrentLine TO LineCount
+      GET(ApplicationQueue,CurrentLine)
+      CASE ApplicationQueue.TextLine
+        OF '[COMMON]'
+           DO ProcessCommonSubsection
+           BREAK
+      ELSE
+         TextOutFile.Line = ApplicationQueue.TextLine
+         ADD(TextOutFile)
+      END
+   END
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+ProcessModuleSection ROUTINE
+   CurrentSection = ModuleSection
+   sSECTION = CurrentLine
+   LOOP CurrentLine = CurrentLine TO LineCount
+      GET(ApplicationQueue,CurrentLine)
+      CASE ApplicationQueue.TextLine
+        OF '[COMMON]'
+           DO ProcessCommonSubsection
+           BREAK
+      ELSE
+         TextOutFile.Line = ApplicationQueue.TextLine
+         ADD(TextOutFile)
+      END
+   END
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+ProcessProcedureSection ROUTINE
+   CurrentSection = ProcedureSection
+   sSECTION = CurrentLine
+   LOOP CurrentLine = CurrentLine TO LineCount
+      GET(ApplicationQueue,CurrentLine)  
+      CASE ApplicationQueue.TextLine
+        OF '[COMMON]'
+           DO ProcessCommonSubsection
+           BREAK
+      ELSE
+         TextOutFile.Line = ApplicationQueue.TextLine
+         ADD(TextOutFile)
+      END
+   END
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 4000
+PROPERTY:END
+ProcessCommonSubsection ROUTINE
+   DATA
+ssDATA      LONG  !DATA subsection start
+ssFILES     LONG  !FILES subsection start
+ssPROMPTS   LONG  !PROMPTS subsection start
+ssEMBED     LONG  !EMED subsection start
+ssADDITION  LONG  !ADDITION subsection start
+nEndCount   LONG  !number of ENDs we are waiting on
+pEMBED      LONG  !pointer to %BeforeGlobalDataUser embed if it exists
+
+   CODE
+   !Find the SUBSECTION locations
+   sSECTION = CurrentLine
+   sSECTIONEND = LineCount
+   LOOP CurrentLine = CurrentLine TO LineCount
+      GET(ApplicationQueue,CurrentLine)
+      CASE ApplicationQueue.TextLine
+        OF '[COMMON]'
+           nEndCount += 1
+        OF '[DATA]'
+           ssDATA = CurrentLine
+        OF '[FILES]'
+           ssFILES = CurrentLine
+        OF '[PROMPTS]'
+           ssPROMPTS = CurrentLine
+        OF '[EMBED]'
+           ssEMBED = CurrentLine
+           nEndCount += 1
+        OF '[ADDITION]'
+           ssADDITION = CHOOSE(ssADDITION = 0,CurrentLine,ssADDITION)
+        OF '[DEFINITION]' OROF '[INSTANCES]' OROF '[WINDOW]'
+           nEndCount += 1
+        OF '[END]'
+           nEndCount -= 1
+           IF nEndCount = 0
+              sSECTIONEND = CurrentLine
+              BREAK
+           END
+        OF '[MODULE]' OROF '[PROCEDURE]'
+           sSECTIONEND = CurrentLine - 1
+           BREAK
+      END
+   END
+
+   FirstLine = sSECTION
+   IF ssEMBED > 0
+      LastLine = ssEMBED - 1
+      DO WriteRange
+   ELSIF ssADDITION > 0
+      LastLine = ssADDITION - 1
+      DO WriteRange
+   ELSE
+      IF nEndCount > 0
+         LastLine = sSECTIONEND
+         DO WriteRange
+         sSECTIONEND += 1
+      ELSE   
+         LastLine = sSECTIONEND - 1
+         DO WriteRange
+      END
+   END
+   !DO WriteRange
+   
+   GET(ApplicationQueue,CurrentLine)
+   CASE CurrentLine
+     OF ssEMBED
+        LOOP pEMBED = CurrentLine TO sSECTIONEND
+           GET(ApplicationQueue,pEMBED)
+           CASE CurrentSection
+             OF ProgramSection
+                IF ApplicationQueue.TextLine = 'EMBED %BeforeGlobalIncudes'
+                   BREAK
+                END
+             OF ModuleSection
+                IF ApplicationQueue.TextLine = 'EMBED %StartOfModule'
+                   BREAK
+                END
+             OF ProcedureSection
+                IF ApplicationQueue.TextLine = 'EMBED %DataSection'
+                   BREAK
+                END
+            END
+        END
+        IF INRANGE(pEMBED,ssEMBED,sSECTIONEND)
+           !found the embed
+           FirstLine = ssEMBED
+           LastLine = pEMBED + 1 ![DEFINITION]
+           DO WriteRange
+           DO Inject_SOURCE
+           FirstLine = LastLine + 1
+           LastLine = sSECTIONEND
+           DO WriteRange
+        ELSE
+           !not found
+           CurrentLine = ssEMBED
+           GET(ApplicationQueue,CurrentLine)
+           TextOutFile.Line = ApplicationQueue.TextLine  !write [EMBED] subsection header
+           ADD(TextOutFile)
+           DO Inject_EmbedPoint
+           FirstLine = ssEMBED + 1
+           LastLine = sSECTIONEND
+           DO WriteRange
+        END
+
+     OF ssADDITION
+        !add the EMBED subsection
+        DO Inject_EMBED
+        !write remainder of PROGRAM section
+        FirstLine = ssADDITION
+        LastLine = sSECTIONEND
+        DO WriteRange
+
+     OF sSECTIONEND
+        !add the EMBED subsection
+        DO Inject_EMBED
+        GET(ApplicationQueue,CurrentLine)
+        CASE ApplicationQueue.TextLine
+          OF '[PROCEDURE]' OROF '[MODULE]'
+            !don't write Section Terminator
+        ELSE    
+           !write Section Terminator
+           TextOutFile.Line = ApplicationQueue.TextLine
+           ADD(TextOutFile)
+        END   
+        
+!!     OF sSECTIONEND + 1
+!!        !add the EMBED subsection
+!!        DO Inject_EMBED
+!!        GET(ApplicationQueue,CurrentLine)
+!!        !write Section Terminator
+!!        TextOutFile.Line = ApplicationQueue.TextLine
+!!        ADD(TextOutFile)   
+   END
+[END]
+EMBED %DataSection
+[DEFINITION]
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 1300
+PROPERTY:END
+!region Notices
+! ================================================================================ 
+! Notice : Copyright (C) 2017, Devuna
+!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
+! 
+!    This file is part of Devuna-LicenseTools (https://github.com/Devuna/Devuna-LicenseTools) 
+! 
+!    Devuna-LicenseTools is free software: you can redistribute it and/or modify 
+!    it under the terms of the MIT License as published by
+!    the Open Source Initiative. 
+! 
+!    Devuna-LicenseTools is distributed in the hope that it will be useful, 
+!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
+!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+!    MIT License for more details. 
+! 
+!    You should have received a copy of the GNU General Public License 
+!    along with Devuna-LicenseTools.  If not, see <https://opensource.org/licenses/MIT>.
+! ================================================================================ 
+!endregion Notices
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 1300
+PROPERTY:END
+sSECTION    LONG  !PROGRAM section start
+sSECTIONEND LONG  !PROGRAM section end
+
+CurrentSection    BYTE
+ProgramSection    EQUATE(1)
+ModuleSection     EQUATE(2)
+ProcedureSection  EQUATE(3)
+[SOURCE]
+PROPERTY:BEGIN
+PRIORITY 3000
+PROPERTY:END
+TextFile             FILE,DRIVER('ASCII'),NAME(TextFilename),PRE(TXT)
+Record                  RECORD,PRE()
+Line                       STRING(4096)
+                        END
+                     END
+TextOutFile          FILE,DRIVER('ASCII'),NAME(TextOutFilename),PRE(OUT),CREATE
+Record                  RECORD,PRE()
+Line                       STRING(4096)
+                        END
+                     END
+[END]
+[END]
+[ADDITION]
+NAME ABC DOSFileLookup
+[INSTANCE]
+INSTANCE 1
+[PROMPTS]
+%ClassItem UNIQUE DEFAULT  ('Default')
+%DefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('SelectFileClass')
+
+%ActualDefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('')
+
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 0
+
+%DOSFileDialogHeader DEFAULT  ('Select Copyright File')
+%DOSFileField FIELD  (CopyrightFilename)
+%DOSInitialDirectory DEFAULT  ('')
+%DOSInitialFilename DEFAULT  ('Copyright.txt')
+%ReturnToOriginalDir LONG  (1)
+%AllowLongFilenames LONG  (1)
+%DOSFileDialogType DEFAULT  ('Open')
+%AllowNoError LONG  (0)
+%DefaultOnCancel LONG  (0)
+%AllowMultiSelect LONG  (0)
+%ActionsToTake DEFAULT  ('')
+%AssignToImageControl LONG  (0)
+%ImageControl DEFAULT  ('')
+%ImageResize LONG  (1)
+%DOSVariableMask LONG  (0)
+%DOSMaskVariable DEFAULT  ('')
+%DOSMaskDesc DEFAULT  ('Text Files')
+%DOSMask DEFAULT  ('*.txt')
+%DOSMoreMasks MULTI LONG  (1)
+%DOSMoreMaskDesc DEPEND %DOSMoreMasks DEFAULT TIMES 1
+WHEN  (1) ('All Files')
+
+%DOSMoreMask DEPEND %DOSMoreMasks DEFAULT TIMES 1
+WHEN  (1) ('*.*')
+
+%RedisplayWindow LONG  (1)
+%UpdateFields MULTI LONG  ()
+%UpdateFeq DEPEND %UpdateFields DEFAULT TIMES 0
+
+%GlobalObject DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('NO')
+
+%ThisObjectName DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('LookupCopyrightFIle')
+
+%UseDefaultABCBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (1)
+
+%UseABCBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (1)
+
+%ABCBaseClass DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('')
+
+%ExtBaseClass DEPEND %ClassItem DEFAULT TIMES 0
+
+%BaseClassIncludeFile DEPEND %ClassItem DEFAULT TIMES 0
+
+%DeriveFromBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (0)
+
+%NewMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewMethodName DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewMethodPrototype DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewClassProperty DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataType DEPEND %NewClassPropertyItems DEFAULT TIMES 1
+WHEN  ('Default')TIMES 0
+
+%NewClassOtherType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataIsRef DEPEND %NewClassPropertyItems LONG TIMES 0
+
+%NewClassDataSize DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim1 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim2 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim3 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim4 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%ClassMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassMethodName DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassMethodPrototype DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassProperty DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataType DEPEND %ClassPropertyItems DEFAULT TIMES 1
+WHEN  ('Default')TIMES 0
+
+%ClassOtherType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataIsRef DEPEND %ClassPropertyItems LONG TIMES 0
+
+%ClassDataSize DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim1 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim2 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim3 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim4 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+[INSTANCE]
+INSTANCE 2
+[PROMPTS]
+%ClassItem UNIQUE DEFAULT  ('Default')
+%DefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('SelectFileClass')
+
+%ActualDefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('')
+
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 0
+
+%DOSFileDialogHeader DEFAULT  ('Select Source Folder')
+%DOSFileField FIELD  (Source_Folder)
+%DOSInitialDirectory DEFAULT  ('')
+%DOSInitialFilename DEFAULT  ('')
+%ReturnToOriginalDir LONG  (1)
+%AllowLongFilenames LONG  (1)
+%DOSFileDialogType DEFAULT  ('Directory')
+%AllowNoError LONG  (0)
+%DefaultOnCancel LONG  (0)
+%AllowMultiSelect LONG  (0)
+%ActionsToTake DEFAULT  ('')
+%AssignToImageControl LONG  (0)
+%ImageControl DEFAULT  ('')
+%ImageResize LONG  (1)
+%DOSVariableMask LONG  (0)
+%DOSMaskVariable DEFAULT  ('')
+%DOSMaskDesc DEFAULT  ('All Files')
+%DOSMask DEFAULT  ('*.*')
+%DOSMoreMasks MULTI LONG  ()
+%DOSMoreMaskDesc DEPEND %DOSMoreMasks DEFAULT TIMES 0
+
+%DOSMoreMask DEPEND %DOSMoreMasks DEFAULT TIMES 0
+
+%RedisplayWindow LONG  (1)
+%UpdateFields MULTI LONG  ()
+%UpdateFeq DEPEND %UpdateFields DEFAULT TIMES 0
+
+%GlobalObject DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('NO')
+
+%ThisObjectName DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('LookupTXAFolder')
+
+%UseDefaultABCBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (1)
+
+%UseABCBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (1)
+
+%ABCBaseClass DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('ADOBlob')
+
+%ExtBaseClass DEPEND %ClassItem DEFAULT TIMES 0
+
+%BaseClassIncludeFile DEPEND %ClassItem DEFAULT TIMES 0
+
+%DeriveFromBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (0)
+
+%NewMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewMethodName DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewMethodPrototype DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewClassProperty DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataType DEPEND %NewClassPropertyItems DEFAULT TIMES 1
+WHEN  ('Default')TIMES 0
+
+%NewClassOtherType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataIsRef DEPEND %NewClassPropertyItems LONG TIMES 0
+
+%NewClassDataSize DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim1 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim2 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim3 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim4 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%ClassMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassMethodName DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassMethodPrototype DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassProperty DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataType DEPEND %ClassPropertyItems DEFAULT TIMES 1
+WHEN  ('Default')TIMES 0
+
+%ClassOtherType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataIsRef DEPEND %ClassPropertyItems LONG TIMES 0
+
+%ClassDataSize DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim1 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim2 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim3 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim4 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+[INSTANCE]
+INSTANCE 3
+[PROMPTS]
+%ClassItem UNIQUE DEFAULT  ('Default')
+%DefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('SelectFileClass')
+
+%ActualDefaultBaseClassType DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('')
+
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 0
+
+%DOSFileDialogHeader DEFAULT  ('Select Targer Folder')
+%DOSFileField FIELD  (Target_Folder)
+%DOSInitialDirectory DEFAULT  ('')
+%DOSInitialFilename DEFAULT  ('')
+%ReturnToOriginalDir LONG  (1)
+%AllowLongFilenames LONG  (1)
+%DOSFileDialogType DEFAULT  ('Directory')
+%AllowNoError LONG  (0)
+%DefaultOnCancel LONG  (0)
+%AllowMultiSelect LONG  (0)
+%ActionsToTake DEFAULT  ('')
+%AssignToImageControl LONG  (0)
+%ImageControl DEFAULT  ('')
+%ImageResize LONG  (1)
+%DOSVariableMask LONG  (0)
+%DOSMaskVariable DEFAULT  ('')
+%DOSMaskDesc DEFAULT  ('All Files')
+%DOSMask DEFAULT  ('*.*')
+%DOSMoreMasks MULTI LONG  ()
+%DOSMoreMaskDesc DEPEND %DOSMoreMasks DEFAULT TIMES 0
+
+%DOSMoreMask DEPEND %DOSMoreMasks DEFAULT TIMES 0
+
+%RedisplayWindow LONG  (1)
+%UpdateFields MULTI LONG  ()
+%UpdateFeq DEPEND %UpdateFields DEFAULT TIMES 0
+
+%GlobalObject DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('NO')
+
+%ThisObjectName DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('FileLookup3')
+
+%UseDefaultABCBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (1)
+
+%UseABCBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (1)
+
+%ABCBaseClass DEPEND %ClassItem DEFAULT TIMES 1
+WHEN  ('Default') ('ADOBlob')
+
+%ExtBaseClass DEPEND %ClassItem DEFAULT TIMES 0
+
+%BaseClassIncludeFile DEPEND %ClassItem DEFAULT TIMES 0
+
+%DeriveFromBaseClass DEPEND %ClassItem LONG TIMES 1
+WHEN  ('Default') (0)
+
+%NewMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewMethodName DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewMethodPrototype DEPEND %NewMethods DEFAULT TIMES 0
+
+%NewClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%NewClassProperty DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataType DEPEND %NewClassPropertyItems DEFAULT TIMES 1
+WHEN  ('Default')TIMES 0
+
+%NewClassOtherType DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataIsRef DEPEND %NewClassPropertyItems LONG TIMES 0
+
+%NewClassDataSize DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim1 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim2 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim3 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%NewClassDataDim4 DEPEND %NewClassPropertyItems DEFAULT TIMES 0
+
+%ClassMethods DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassMethodName DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassMethodPrototype DEPEND %ClassMethods DEFAULT TIMES 0
+
+%ClassPropertyItems DEPEND %ClassItem MULTI LONG TIMES 0
+
+%ClassProperty DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataType DEPEND %ClassPropertyItems DEFAULT TIMES 1
+WHEN  ('Default')TIMES 0
+
+%ClassOtherType DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataIsRef DEPEND %ClassPropertyItems LONG TIMES 0
+
+%ClassDataSize DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim1 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim2 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim3 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+%ClassDataDim4 DEPEND %ClassPropertyItems DEFAULT TIMES 0
+
+[WINDOW]
+Window  WINDOW('Add Copyright Notice to TXA File'),AT(,,395,224),FONT('Segoe UI Semilight', |
+          11),GRAY,SYSTEM
+          BUTTON('&Process'),AT(282,205,45,14),USE(?OkButton),DEFAULT,DISABLE,#ORDINAL(1)
+          BUTTON('Close'),AT(332,205,45,14),USE(?CloseButton),#ORDINAL(2)
+          BUTTON('...'),AT(380,5,12,10),USE(?LookupCopyrightFile),#ORIG(?LookupFile),#SEQ(1), |
+            #ORDINAL(3)
+          LIST,AT(65,95,311,105),USE(?FileList),VSCROLL,ALRT(MouseLeft2),FORMAT('10L(2)I@pp' & |
+            '@#7#80L(2)~Select TXA Files to Process~C(0)@s255@#1#'),FROM(FileQueue),#FIELDS(TXAQ:Selected, |
+            TXAQ:name),#ORDINAL(4)
+          PROMPT('Copyright &File'),AT(5,5),USE(?CopyrightFilename:Prompt),#ORDINAL(5)
+          ENTRY(@s255),AT(65,5,311,10),USE(CopyrightFilename),DISABLE,MSG('The file con' & |
+            'taining the tokenized License Text'),TIP('The file containing the tokenize' & |
+            'd License Text'),#ORDINAL(6)
+          PROMPT('Copyright &Date'),AT(5,20),USE(?CopyrightDate:Prompt),#ORDINAL(7)
+          ENTRY(@s20),AT(65,20,85,10),USE(CopyrightDate),MSG('Copyright date for token ' & |
+            'replacement'),TIP('Copyright date for token replacement'),#ORDINAL(8)
+          PROMPT('Copyright &Owner'),AT(5,35),USE(?CopyrightOwner:Prompt),#ORDINAL(9)
+          ENTRY(@s20),AT(65,35,85,10),USE(CopyrightOwner),MSG('Name of Copyright Owner ' & |
+            'for token replacement'),TIP('Name of Copyright Owner for token replacement'), |
+            #ORDINAL(10)
+          PROMPT('&Repository'),AT(5,50),USE(?Repository:Prompt),#ORDINAL(11)
+          ENTRY(@s40),AT(65,50,165,10),USE(Repository),MSG('Repository name for token r' & |
+            'eplacement'),TIP('Repository name for token replacement'),#ORDINAL(12)
+          PROMPT('&Source Folder'),AT(5,65),USE(?Source_Folder:Prompt),#ORDINAL(13)
+          ENTRY(@s255),AT(65,65,311,10),USE(Source_Folder),DISABLE,MSG('Folder containi' & |
+            'ng TXA files to process'),TIP('Folder containing TXA files to process'),#ORDINAL(14)
+          BUTTON('...'),AT(380,65,12,10),USE(?LookupSourceFolder),#ORIG(?LookupFile),#SEQ(2), |
+            #ORDINAL(15)
+          PROMPT('Target Folder'),AT(5,80),USE(?Target_Folder:Prompt),#ORDINAL(16)
+          ENTRY(@s255),AT(65,80,311,10),USE(Target_Folder),DISABLE,MSG('Folder to recie' & |
+            've processed TXA files'),TIP('Folder to recieve processed TXA files'),#ORDINAL(17)
+          BUTTON('...'),AT(380,80,12,10),USE(?LookupTargetFolder),#ORIG(?LookupFile),#SEQ(3), |
+            #ORDINAL(18)
+          BUTTON('&Select'),AT(182,205,45,14),USE(?SelectButton),#ORDINAL(19)
+          BUTTON('Select &All'),AT(232,205,45,14),USE(?SelectAllButton),#ORDINAL(20)
+        END
+
+[END]
